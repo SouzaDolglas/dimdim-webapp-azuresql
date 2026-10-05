@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="760" viewBox="0 0 1400 760" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#334155"/></marker>
+    <marker id="b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#7c3aed"/></marker>
+  </defs>
+  <rect width="1400" height="760" fill="#ffffff"/>
+  <text x="40" y="50" font-size="28" font-weight="700" fill="#0f172a">Projeto DimDim — Arquitetura da solução (Web App + Azure SQL)</text>
+  <text x="40" y="80" font-size="16" fill="#475569">Grupo PataCloud · FIAP 2TDSR · DevOps Tools &amp; Cloud Computing · 2º Checkpoint</text>
+
+  <!-- Local -->
+  <rect x="40" y="120" width="300" height="600" rx="14" fill="#f8fafc" stroke="#94a3b8" stroke-dasharray="6 5"/>
+  <text x="60" y="152" font-size="18" font-weight="700" fill="#334155">Ambiente local / GitHub</text>
+  <rect x="65" y="180" width="250" height="110" rx="10" fill="#fff" stroke="#64748b"/>
+  <text x="85" y="212" font-size="17" font-weight="700" fill="#0f172a">💻 Máquina do grupo</text>
+  <text x="85" y="238" font-size="14" fill="#334155">.NET 10 SDK · Azure CLI</text>
+  <text x="85" y="260" font-size="14" fill="#334155">sqlcmd · scripts/*.sh</text>
+  <rect x="65" y="330" width="250" height="110" rx="10" fill="#fff" stroke="#64748b"/>
+  <text x="85" y="362" font-size="17" font-weight="700" fill="#0f172a">🐙 Repositório GitHub</text>
+  <text x="85" y="388" font-size="14" fill="#334155">código-fonte · DDL · scripts CLI</text>
+  <text x="85" y="410" font-size="14" fill="#334155">JSON da API · README (how-to)</text>
+  <rect x="65" y="480" width="250" height="110" rx="10" fill="#fff" stroke="#64748b"/>
+  <text x="85" y="512" font-size="17" font-weight="700" fill="#0f172a">🌐 Usuário (navegador)</text>
+  <text x="85" y="538" font-size="14" fill="#334155">front-end Razor Pages</text>
+  <text x="85" y="560" font-size="14" fill="#334155">ou API REST /api/*</text>
+  <line x1="190" y1="290" x2="190" y2="330" stroke="#334155" stroke-width="2" marker-end="url(#a)"/>
+  <text x="200" y="316" font-size="12" fill="#475569">git push</text>
+
+  <!-- Azure -->
+  <rect x="400" y="120" width="960" height="600" rx="14" fill="#eff6ff" stroke="#0078d4" stroke-width="2"/>
+  <text x="420" y="152" font-size="18" font-weight="700" fill="#0078d4">☁ Microsoft Azure — assinatura Azure for Students · região eastus2</text>
+  <rect x="425" y="170" width="910" height="530" rx="12" fill="#fff" stroke="#0078d4" stroke-dasharray="5 4"/>
+  <text x="445" y="198" font-size="15" font-weight="700" fill="#1e3a8a">Grupo de recursos: rg-564099-dimdim-webapp</text>
+
+  <!-- App Service -->
+  <rect x="460" y="230" width="380" height="230" rx="12" fill="#e0f2fe" stroke="#0284c7" stroke-width="2"/>
+  <text x="480" y="262" font-size="17" font-weight="700" fill="#075985">App Service Plan plan-564099-dimdim</text>
+  <text x="480" y="284" font-size="14" fill="#0c4a6e">Linux · SKU B1</text>
+  <rect x="485" y="300" width="345" height="140" rx="10" fill="#fff" stroke="#0284c7"/>
+  <text x="505" y="330" font-size="17" font-weight="700" fill="#0f172a">Web App app-564099-dimdim</text>
+  <text x="505" y="354" font-size="14" fill="#334155">ASP.NET Core 10 · Razor Pages + API</text>
+  <text x="505" y="376" font-size="14" fill="#334155">EF Core (SqlServer) · App Insights SDK</text>
+  <text x="505" y="398" font-size="14" fill="#334155">configurações: ConnectionStrings:DimDim,</text>
+  <text x="505" y="418" font-size="12.5" fill="#334155">APPLICATIONINSIGHTS_CONNECTION_STRING</text>
+
+  <!-- Azure SQL -->
+  <rect x="930" y="230" width="380" height="230" rx="12" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+  <text x="950" y="262" font-size="17" font-weight="700" fill="#92400e">Azure SQL Server (PaaS)</text>
+  <text x="950" y="284" font-size="14" fill="#78350f">sql-564099-dimdim.database.windows.net</text>
+  <rect x="955" y="300" width="330" height="140" rx="10" fill="#fff" stroke="#d97706"/>
+  <text x="975" y="330" font-size="17" font-weight="700" fill="#0f172a">Banco dimdim · Basic 5 DTU</text>
+  <text x="975" y="358" font-size="14" fill="#334155">cliente (id PK, nome, cpf UQ, email, …)</text>
+  <text x="975" y="382" font-size="14" fill="#334155">conta (id PK, numero UQ, tipo, saldo,</text>
+  <text x="975" y="402" font-size="14" fill="#334155">        cliente_id FK → cliente.id)</text>
+  <text x="975" y="426" font-size="13" fill="#78350f">relacionamento 1:N · ON DELETE CASCADE</text>
+
+  <!-- Monitor -->
+  <rect x="460" y="510" width="850" height="160" rx="12" fill="#f5f3ff" stroke="#7c3aed" stroke-width="2"/>
+  <text x="480" y="542" font-size="17" font-weight="700" fill="#5b21b6">Monitoramento</text>
+  <rect x="485" y="560" width="370" height="90" rx="10" fill="#fff" stroke="#7c3aed"/>
+  <text x="505" y="590" font-size="16" font-weight="700" fill="#0f172a">Application Insights appi-564099-dimdim</text>
+  <text x="505" y="614" font-size="14" fill="#334155">requisições · tempos · falhas · Live Metrics</text>
+  <text x="505" y="634" font-size="14" fill="#334155">dependências SQL (cada INSERT/UPDATE/DELETE)</text>
+  <rect x="915" y="560" width="370" height="90" rx="10" fill="#fff" stroke="#7c3aed"/>
+  <text x="935" y="590" font-size="16" font-weight="700" fill="#0f172a">Log Analytics log-564099-dimdim</text>
+  <text x="935" y="614" font-size="14" fill="#334155">armazena a telemetria (consultas KQL)</text>
+  <text x="935" y="634" font-size="14" fill="#334155">+ métricas do banco (DTU, conexões)</text>
+
+  <!-- arrows -->
+  <path d="M315 535 C 380 535, 400 380, 485 380" fill="none" stroke="#334155" stroke-width="2.5" marker-end="url(#a)"/>
+  <text x="330" y="470" font-size="13" fill="#334155">HTTPS</text>
+  <path d="M315 235 C 380 235, 420 330, 485 330" fill="none" stroke="#334155" stroke-width="2.5" stroke-dasharray="7 5" marker-end="url(#a)"/>
+  <text x="330" y="268" font-size="13" fill="#334155">az webapp deploy</text>
+  <path d="M315 205 C 500 95, 1000 80, 1100 228" fill="none" stroke="#334155" stroke-width="2" stroke-dasharray="7 5" marker-end="url(#a)"/>
+  <text x="560" y="108" font-size="13" fill="#334155">az sql … + sqlcmd -i ddl.sql (cria recursos e tabelas)</text>
+  <line x1="830" y1="370" x2="955" y2="370" stroke="#334155" stroke-width="2.5" marker-end="url(#a)"/>
+  <text x="850" y="360" font-size="13" fill="#334155">TCP 1433</text>
+  <text x="850" y="392" font-size="13" fill="#334155">EF Core</text>
+  <line x1="650" y1="440" x2="650" y2="560" stroke="#7c3aed" stroke-width="2.5" marker-end="url(#b)"/>
+  <text x="660" y="500" font-size="13" fill="#5b21b6">telemetria</text>
+  <line x1="855" y1="605" x2="915" y2="605" stroke="#7c3aed" stroke-width="2.5" marker-end="url(#b)"/>
+  <line x1="1120" y1="440" x2="1120" y2="560" stroke="#7c3aed" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#b)"/>
+  <text x="1130" y="500" font-size="13" fill="#5b21b6">métricas do banco</text>
+</svg>

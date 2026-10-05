@@ -1,0 +1,14 @@
+@page "{id:int}"
+@model DimDim.Web.Pages.Contas.DeleteModel
+@{ ViewData["Title"] = "Excluir conta"; }
+<h1 class="h3">Excluir conta #@Model.Conta.Id?</h1>
+<dl class="row col-md-6">
+    <dt class="col-4">Número</dt><dd class="col-8">@Model.Conta.Numero</dd>
+    <dt class="col-4">Tipo</dt><dd class="col-8">@Model.Conta.Tipo</dd>
+    <dt class="col-4">Saldo</dt><dd class="col-8">@Model.Conta.Saldo.ToString("C", new System.Globalization.CultureInfo("pt-BR"))</dd>
+    <dt class="col-4">Cliente</dt><dd class="col-8">@Model.Conta.Cliente?.Nome</dd>
+</dl>
+<form method="post">
+    <button class="btn btn-danger">Excluir</button>
+    <a asp-page="Index" class="btn btn-link">Cancelar</a>
+</form>

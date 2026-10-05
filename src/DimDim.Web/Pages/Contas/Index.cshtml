@@ -1,0 +1,30 @@
+@page
+@model DimDim.Web.Pages.Contas.IndexModel
+@{ ViewData["Title"] = "Contas"; }
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h1 class="h3 m-0">Contas</h1>
+    <a class="btn btn-success" asp-page="Create">+ Nova conta</a>
+</div>
+
+@if (TempData["msg"] is string msg) { <div class="alert alert-info">@msg</div> }
+
+<table class="table table-hover align-middle">
+    <thead><tr><th>ID</th><th>Número</th><th>Tipo</th><th class="text-end">Saldo</th><th>Cliente</th><th>Aberta em</th><th></th></tr></thead>
+    <tbody>
+    @foreach (var c in Model.Contas)
+    {
+        <tr>
+            <td>@c.Id</td><td>@c.Numero</td><td>@c.Tipo</td>
+            <td class="text-end">@c.Saldo.ToString("C", new System.Globalization.CultureInfo("pt-BR"))</td>
+            <td>@c.ClienteId — @c.Cliente?.Nome</td>
+            <td>@c.DataAbertura.ToString("dd/MM/yyyy HH:mm")</td>
+            <td class="text-end">
+                <a class="btn btn-sm btn-outline-primary" asp-page="Edit" asp-route-id="@c.Id">Editar</a>
+                <a class="btn btn-sm btn-outline-danger" asp-page="Delete" asp-route-id="@c.Id">Excluir</a>
+            </td>
+        </tr>
+    }
+    @if (Model.Contas.Count == 0) { <tr><td colspan="7" class="text-muted">Nenhuma conta cadastrada.</td></tr> }
+    </tbody>
+</table>

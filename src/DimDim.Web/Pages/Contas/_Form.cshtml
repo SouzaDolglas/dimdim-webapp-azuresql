@@ -1,0 +1,10 @@
+@model DimDim.Web.Models.Conta
+@{ var clientes = (Microsoft.AspNetCore.Mvc.Rendering.SelectList)ViewData["Clientes"]!; }
+<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+<div class="mb-3"><label asp-for="ClienteId" class="form-label"></label>
+    <select asp-for="ClienteId" asp-items="clientes" class="form-select"><option value="0">— escolha —</option></select>
+    <span asp-validation-for="ClienteId" class="text-danger"></span></div>
+<div class="mb-3"><label asp-for="Numero" class="form-label"></label><input asp-for="Numero" class="form-control" placeholder="0001-5" /><span asp-validation-for="Numero" class="text-danger"></span></div>
+<div class="mb-3"><label asp-for="Tipo" class="form-label"></label>
+    <select asp-for="Tipo" class="form-select"><option>CORRENTE</option><option>POUPANCA</option><option>INVESTIMENTO</option></select></div>
+<div class="mb-3"><label asp-for="Saldo" class="form-label"></label><input asp-for="Saldo" class="form-control" type="number" step="0.01" min="0" /><span asp-validation-for="Saldo" class="text-danger"></span></div>

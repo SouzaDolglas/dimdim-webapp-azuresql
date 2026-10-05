@@ -1,0 +1,17 @@
+@page "{id:int}"
+@model DimDim.Web.Pages.Clientes.DeleteModel
+@{ ViewData["Title"] = "Excluir cliente"; }
+<h1 class="h3">Excluir cliente #@Model.Cliente.Id?</h1>
+<dl class="row col-md-6">
+    <dt class="col-4">Nome</dt><dd class="col-8">@Model.Cliente.Nome</dd>
+    <dt class="col-4">CPF</dt><dd class="col-8">@Model.Cliente.Cpf</dd>
+    <dt class="col-4">E-mail</dt><dd class="col-8">@Model.Cliente.Email</dd>
+</dl>
+@if (Model.Cliente.Contas.Count > 0)
+{
+    <div class="alert alert-warning col-md-6">As @Model.Cliente.Contas.Count conta(s) deste cliente também serão excluídas (ON DELETE CASCADE).</div>
+}
+<form method="post">
+    <button class="btn btn-danger">Excluir</button>
+    <a asp-page="Index" class="btn btn-link">Cancelar</a>
+</form>

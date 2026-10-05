@@ -1,0 +1,19 @@
+@page
+@model IndexModel
+@{ ViewData["Title"] = "Início"; }
+
+<div class="py-4">
+    <h1 class="display-6">DimDim — Clientes e Contas</h1>
+    <p class="lead text-muted">Aplicação web .NET no Azure App Service, persistindo no Azure SQL Database e monitorada pelo Application Insights.</p>
+</div>
+
+<div class="row g-3">
+    <div class="col-md-4"><div class="card text-center"><div class="card-body">
+        <div class="display-6">@Model.Clientes</div><div class="text-muted">clientes</div>
+        <a asp-page="/Clientes/Index" class="btn btn-outline-primary btn-sm mt-2">Gerenciar clientes</a></div></div></div>
+    <div class="col-md-4"><div class="card text-center"><div class="card-body">
+        <div class="display-6">@Model.Contas</div><div class="text-muted">contas</div>
+        <a asp-page="/Contas/Index" class="btn btn-outline-primary btn-sm mt-2">Gerenciar contas</a></div></div></div>
+    <div class="col-md-4"><div class="card text-center"><div class="card-body">
+        <div class="display-6">@Model.SaldoTotal.ToString("C", new System.Globalization.CultureInfo("pt-BR"))</div><div class="text-muted">saldo total</div></div></div></div>
+</div>
